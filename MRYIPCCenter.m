@@ -141,7 +141,7 @@
 	invocation.selector = method.selector;
 	NSDictionary* args = notification.userInfo[@"args"];
 	NSString* replyUUID = notification.userInfo[@"replyUUID"];
-	[invocation setArgument:&args atIndex:2];
+	if (args!=nil) [invocation setArgument:&args atIndex:2];
 	[invocation invoke];
 
 	//send reply:
